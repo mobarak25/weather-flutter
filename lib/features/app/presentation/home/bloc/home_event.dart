@@ -13,3 +13,5 @@ class Counter extends HomeEvent {
 }
 
 class GetWeather extends HomeEvent {}
+
+class GetDate extends HomeEvent {}

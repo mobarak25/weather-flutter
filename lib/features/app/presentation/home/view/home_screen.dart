@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         create: (context) => HomeBloc(getIt<ApiRepo>()),
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
-            final bloc = context.read<HomeBloc>();
+            // final bloc = context.read<HomeBloc>();
             final size = MediaQuery.of(context).size;
             return state.weather.current != null
                 ? Column(
@@ -40,7 +40,14 @@ class HomeScreen extends StatelessWidget {
                               left: 20,
                               right: 20,
                             ),
-                            child: Text(state.weather.current!.lastUpdated!),
+                            child: Column(
+                              children: [
+                                const SizedBox(height: 20),
+                                Text(
+                                  state.date,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
