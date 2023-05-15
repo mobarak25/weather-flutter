@@ -2,22 +2,22 @@ part of 'home_bloc.dart';
 
 class HomeState extends Equatable {
   const HomeState({
-    this.count = 0,
     this.weather = const Weather(),
+    this.date = '',
   });
 
-  final int count;
   final Weather weather;
+  final String date;
 
-  HomeState copyWith({int? count, Weather? weather}) {
+  HomeState copyWith({String? date, Weather? weather}) {
     return HomeState(
-      count: count ?? this.count,
       weather: weather ?? this.weather,
+      date: date ?? this.date,
     );
   }
 
   @override
-  List<Object> get props => [count, weather];
+  List<Object> get props => [weather, date];
 }
 
 class HomeInitial extends HomeState {}

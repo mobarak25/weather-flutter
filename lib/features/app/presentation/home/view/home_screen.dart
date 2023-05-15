@@ -12,26 +12,42 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0XFF1a1c1e),
-      body: Container(
-        child: BlocProvider(
-          create: (context) => HomeBloc(getIt<ApiRepo>()),
-          child: BlocBuilder<HomeBloc, HomeState>(
-            builder: (context, state) {
-              final bloc = context.read<HomeBloc>();
-              final size = MediaQuery.of(context).size;
-              return Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  WeatherBg(
-                    height: size.height * 0.5,
-                    weatherType: WeatherType.cloudyNight,
-                    width: size.width,
-                  ),
-                ],
-              );
-            },
-          ),
+      body: BlocProvider(
+        create: (context) => HomeBloc(getIt<ApiRepo>()),
+        child: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            final bloc = context.read<HomeBloc>();
+            final size = MediaQuery.of(context).size;
+            return state.weather.current != null
+                ? Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Stack(
+                        children: [
+                          ClipRRect(
+                            borderRadius:
+                                BorderRadius.circular(size.height * 0.05),
+                            child: WeatherBg(
+                              height: size.height * 0.55,
+                              weatherType: WeatherType.sunny,
+                              width: size.width,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).padding.top,
+                              left: 20,
+                              right: 20,
+                            ),
+                            child: Text(state.weather.current!.lastUpdated!),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                : const Center(child: CircularProgressIndicator());
+          },
         ),
       ),
     );

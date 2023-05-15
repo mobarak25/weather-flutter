@@ -10,17 +10,11 @@ part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(this._apiRepo) : super(HomeInitial()) {
-    on<Counter>(counter);
     on<GetWeather>(_getWeather);
-
     add(GetWeather());
   }
 
   final ApiRepo _apiRepo;
-
-  FutureOr<void> counter(Counter event, Emitter<HomeState> emit) {
-    emit(state.copyWith(count: event.count + 1));
-  }
 
   FutureOr<void> _getWeather(GetWeather event, Emitter<HomeState> emit) async {
     final body = {
@@ -29,7 +23,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       'device_name': 'IPhone'
     };
     final response = await _apiRepo.post(
-        endpoint: "?key=05723c6f77864e33a1b60712231305&q=Thakurgaon&days=7",
+        endpoint: "?key=05723c6f77864e33a1b60712231305&q=auto:ip&days=7",
         body: body,
         responseModal: const Weather());
     if (response != null) {
