@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qbidding/core/utils/colors.dart';
-import 'package:qbidding/core/utils/text_styles.dart';
-import 'package:qbidding/core/widget/text.dart';
+import 'package:weather/core/utils/colors.dart';
+import 'package:weather/core/utils/text_styles.dart';
+import 'package:weather/core/widget/text.dart';
 
 class TextFieldB extends StatefulWidget {
   const TextFieldB(

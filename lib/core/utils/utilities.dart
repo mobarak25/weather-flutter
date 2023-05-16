@@ -10,6 +10,6 @@ class ImageFile {
 
 String getDate(String dateData) {
   final date = DateTime.parse(dateData);
-  final formatedDate = DateFormat('d MMM, EEEE').format(date);
+  final formatedDate = DateFormat('EEEE, MMM d, yyyy').format(date);
   return formatedDate;
 }

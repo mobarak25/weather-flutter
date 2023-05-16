@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qbidding/core/utils/colors.dart';
+import 'package:weather/core/utils/colors.dart';
 
 class TextB extends StatelessWidget {
   final String text;

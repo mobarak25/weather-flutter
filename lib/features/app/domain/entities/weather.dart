@@ -134,8 +134,8 @@ class Current {
 }
 
 class Condition {
-  final Text? text;
-  final Icon? icon;
+  final String? text;
+  final String? icon;
   final int? code;
 
   Condition({
@@ -145,14 +145,14 @@ class Condition {
   });
 
   factory Condition.fromJson(Map<String, dynamic> json) => Condition(
-        text: textValues.map[json["text"]],
-        icon: iconValues.map[json["icon"]],
+        text: json["text"],
+        icon: json["icon"],
         code: json["code"],
       );
 
   Map<String, dynamic> toJson() => {
-        "text": textValues.reverse[text],
-        "icon": iconValues.reverse[icon],
+        "text": text,
+        "icon": icon,
         "code": code,
       };
 }
