@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qbidding/core/utils/colors.dart';
+
 import 'package:flutter/cupertino.dart';
+import 'package:weather/core/utils/colors.dart';
 
 const bStyle = TextStyle(
   fontSize: 14,
