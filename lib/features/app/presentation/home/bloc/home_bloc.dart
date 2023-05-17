@@ -26,7 +26,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       'device_name': 'IPhone'
     };
     final response = await _apiRepo.post(
-        endpoint: "?key=05723c6f77864e33a1b60712231305&q=auto:ip&days=1",
+        endpoint: "?key=05723c6f77864e33a1b60712231305&q=auto:ip&days=7",
         body: body,
         responseModal: const Weather());
     if (response != null) {
