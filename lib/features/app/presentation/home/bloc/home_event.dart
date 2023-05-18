@@ -15,3 +15,14 @@ class Counter extends HomeEvent {
 class GetWeather extends HomeEvent {}
 
 class GetDate extends HomeEvent {}
+
+class CallLocationModal extends HomeEvent {}
+
+class GetLocation extends HomeEvent {
+  const GetLocation({required this.location});
+  final String location;
+}
+
+class GetMyLocation extends HomeEvent {}
+
+class AutoCallWeather extends HomeEvent {}

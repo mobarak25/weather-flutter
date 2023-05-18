@@ -157,7 +157,7 @@ class Condition {
       };
 }
 
-enum Icon {
+enum IconPng {
   CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_116_PNG,
   CDN_WEATHERAPI_COM_WEATHER_64_X64_NIGHT_113_PNG,
   CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_119_PNG,
@@ -166,22 +166,22 @@ enum Icon {
 
 final iconValues = EnumValues({
   "//cdn.weatherapi.com/weather/64x64/day/113.png":
-      Icon.CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_113_PNG,
+      IconPng.CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_113_PNG,
   "//cdn.weatherapi.com/weather/64x64/day/116.png":
-      Icon.CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_116_PNG,
+      IconPng.CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_116_PNG,
   "//cdn.weatherapi.com/weather/64x64/day/119.png":
-      Icon.CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_119_PNG,
+      IconPng.CDN_WEATHERAPI_COM_WEATHER_64_X64_DAY_119_PNG,
   "//cdn.weatherapi.com/weather/64x64/night/113.png":
-      Icon.CDN_WEATHERAPI_COM_WEATHER_64_X64_NIGHT_113_PNG
+      IconPng.CDN_WEATHERAPI_COM_WEATHER_64_X64_NIGHT_113_PNG
 });
 
-enum Text { PARTLY_CLOUDY, CLEAR, CLOUDY, SUNNY }
+enum TextEnum { PARTLY_CLOUDY, CLEAR, CLOUDY, SUNNY }
 
 final textValues = EnumValues({
-  "Clear": Text.CLEAR,
-  "Cloudy": Text.CLOUDY,
-  "Partly cloudy": Text.PARTLY_CLOUDY,
-  "Sunny": Text.SUNNY
+  "Clear": TextEnum.CLEAR,
+  "Cloudy": TextEnum.CLOUDY,
+  "Partly cloudy": TextEnum.PARTLY_CLOUDY,
+  "Sunny": TextEnum.SUNNY
 });
 
 class Forecast {
