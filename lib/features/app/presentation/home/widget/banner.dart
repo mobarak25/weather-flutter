@@ -79,13 +79,13 @@ class WeatherBanner extends StatelessWidget {
                       const SizedBox(height: 10),
                       TextB(
                         text:
-                            'Visibility: ${weather.current!.visKm!.round()} km',
+                            'Visibility: ${weather.current!.visKm!.round()}km',
                         fontSize: 20,
                         fontColor: bWhite,
                       ),
                       const SizedBox(height: 10),
                       TextB(
-                        text: 'Wind: ${weather.current!.windKph!.round()} km/h',
+                        text: 'Wind: ${weather.current!.windKph!.round()}km/h',
                         fontSize: 20,
                         fontColor: bWhite,
                       ),
