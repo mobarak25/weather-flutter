@@ -29,10 +29,12 @@ class HomeScreen extends StatelessWidget {
                         weather: state.weather,
                         date: state.date,
                         isloading: state.isloading,
+                        weatherType: state.weatherType,
                       ),
                       const SizedBox(height: 15),
                       WeatherByHour(
                         hours: state.weather.forecast!.forecastday![0].hour!,
+                        forecastTime: state.forecastTime,
                       ),
                       const SizedBox(height: 10),
                       WeatherByDays(

@@ -12,10 +12,12 @@ class WeatherBanner extends StatelessWidget {
       {required this.weather,
       required this.date,
       this.isloading = false,
+      required this.weatherType,
       super.key});
   final Weather weather;
   final String date;
   final bool isloading;
+  final WeatherType weatherType;
   // final BuildContext context;
 
   @override
@@ -27,7 +29,7 @@ class WeatherBanner extends StatelessWidget {
         ClipRRect(
           child: WeatherBg(
             height: size.height * 0.45,
-            weatherType: WeatherType.thunder,
+            weatherType: weatherType,
             width: size.width,
           ),
         ),
@@ -183,9 +185,13 @@ class WeatherBanner extends StatelessWidget {
                             ),
                           ],
                         ),
-                        TextB(
-                          text: weather.current!.condition!.text!,
-                          fontColor: bWhite,
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 200),
+                          child: TextB(
+                            text: weather.current!.condition!.text!,
+                            maxLines: 1,
+                            fontColor: bWhite,
+                          ),
                         ),
                       ],
                     ),

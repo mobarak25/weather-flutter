@@ -26,3 +26,10 @@ class GetLocation extends HomeEvent {
 class GetMyLocation extends HomeEvent {}
 
 class AutoCallWeather extends HomeEvent {}
+
+class ChangeWeather extends HomeEvent {}
+
+class GetForcastTime extends HomeEvent {
+  const GetForcastTime({required this.getTime});
+  final int getTime;
+}

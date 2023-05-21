@@ -6,9 +6,11 @@ import 'package:weather/core/widget/text.dart';
 import 'package:weather/features/app/domain/entities/weather.dart';
 
 class WeatherByHour extends StatelessWidget {
-  const WeatherByHour({required this.hours, super.key});
+  const WeatherByHour(
+      {required this.hours, required this.forecastTime, super.key});
 
   final List<Hour> hours;
+  final String forecastTime;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +24,22 @@ class WeatherByHour extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TextB(
-            text: "Weather by hour",
-            fontSize: 18,
-            fontColor: bWhite,
-            fontWeight: FontWeight.w500,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const TextB(
+                text: "Weather by hour",
+                fontSize: 18,
+                fontColor: bWhite,
+                fontWeight: FontWeight.w500,
+              ),
+              TextB(
+                text: forecastTime,
+                fontSize: 14,
+                fontColor: bRed,
+                fontWeight: FontWeight.w500,
+              ),
+            ],
           ),
           const SizedBox(height: 10),
           SingleChildScrollView(
